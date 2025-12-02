@@ -35,19 +35,19 @@ export const SCENARIOS: ScenarioConfig[] = [
     highLabel:
       "Dieses Bild stammt aus einer Ausstellung eines international bekannten modernen Künstlers.",
     lowLabel:
-      "Dieses Bild stammt aus einer Schülerarbeit einer 9. Klasse.",
+      "Dieses Bild stammt aus einer Schülerarbeit einer 6. Klasse.",
     imageUrl: "/images/kunstwerk.jpg",
   },
   {
     id: "aufsatz",
     title: "Bewertung eines Schüleraufsatzes",
-    question: "Welche Note würdest du für diesen Text geben?",
+    question: "Wie literarisch wertvoll findest du diesen Text geben?",
     minValue: 1,
-    maxValue: 6,
+    maxValue: 10,
     highLabel:
-      "Text von Lara, 9. Klasse. Laut Lehrkraft sehr gut in Deutsch, liest viel und ist engagiert.",
+      "Text von Lara, 7. Klasse. Laut Lehrkraft sehr gut in Deutsch, liest viel und ist engagiert.",
     lowLabel:
-      "Text von Lara, 9. Klasse. Laut Lehrkraft hat sie häufig Schwierigkeiten in Deutsch, liest selten und wirkt eher unmotiviert.",
+      "Text von Lara, 7. Klasse. Laut Lehrkraft hat sie häufig Schwierigkeiten in Deutsch, liest selten und wirkt eher unmotiviert.",
     imageUrl: "/images/aufsatz.jpg",
   },
   {
@@ -57,9 +57,9 @@ export const SCENARIOS: ScenarioConfig[] = [
     minValue: 1,
     maxValue: 10,
     highLabel:
-      "Das ist Alex (17). Alex engagiert sich ehrenamtlich im Sportverein und hilft jüngeren Schüler*innen bei den Hausaufgaben.",
+      "Das ist Alex (22). Alex engagiert sich ehrenamtlich im Sportverein und hilft jüngeren Schüler*innen bei den Hausaufgaben.",
     lowLabel:
-      "Das ist Alex (17). Alex hatte kürzlich Ärger wegen eines Diebstahl-Verdachts und gilt bei einigen Lehrkräften als eher unzuverlässig.",
+      "Das ist Alex (22). Alex hatte kürzlich Ärger wegen eines Diebstahl-Verdachts und hat einen tiefergelegten VW Golf.",
     imageUrl: "/images/person.jpg",
   },
   {
@@ -69,9 +69,9 @@ export const SCENARIOS: ScenarioConfig[] = [
     minValue: 1,
     maxValue: 10,
     highLabel:
-      "Bewerbung von Mara K. – Abschluss an einem renommierten Elite-Gymnasium, mehrfach für besondere Leistungen ausgezeichnet.",
+      "Bewerbung von Jasmin K. – Abschluss an einem renommierten Elite-Gymnasium, mehrfach für besondere Leistungen ausgezeichnet.",
     lowLabel:
-      "Bewerbung von Mara K. – Abschluss an einer beliebigen Gesamtschule, ohne besondere Auszeichnungen.",
+      "Bewerbung von Jasmin K. – Abschluss an einer städtischen Gesamtschule, ohne besondere Auszeichnungen.",
     imageUrl: "/images/lebenslauf.jpg",
   },
   {
@@ -83,7 +83,7 @@ export const SCENARIOS: ScenarioConfig[] = [
     highLabel:
       "Marke: AURORA Pro Audio. UVP: 199 €. Beliebt bei vielen Musiker*innen.",
     lowLabel:
-      "Marke: SoundMax Basic. Preis: 24,99 € beim Discounter. Einfaches Einsteigermodell.",
+      "Marke: SoundMax Basic. Preis: 24,99 €. Einfaches Einsteigermodell.",
     imageUrl: "/images/produkt.jpg",
   },
 ];
