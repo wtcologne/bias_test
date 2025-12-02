@@ -36,7 +36,7 @@ export const SCENARIOS: ScenarioConfig[] = [
       "Dieses Bild stammt aus einer Ausstellung eines international bekannten modernen Künstlers.",
     lowLabel:
       "Dieses Bild stammt aus einer Schülerarbeit einer 9. Klasse.",
-    imageUrl: "/images/kunstwerk.png",
+    imageUrl: "/images/kunstwerk.jpg",
   },
   {
     id: "aufsatz",
@@ -48,7 +48,7 @@ export const SCENARIOS: ScenarioConfig[] = [
       "Text von Lara, 9. Klasse. Laut Lehrkraft sehr gut in Deutsch, liest viel und ist engagiert.",
     lowLabel:
       "Text von Lara, 9. Klasse. Laut Lehrkraft hat sie häufig Schwierigkeiten in Deutsch, liest selten und wirkt eher unmotiviert.",
-    imageUrl: "/images/aufsatz.png",
+    imageUrl: "/images/aufsatz.jpg",
   },
   {
     id: "person",
@@ -60,7 +60,7 @@ export const SCENARIOS: ScenarioConfig[] = [
       "Das ist Alex (17). Alex engagiert sich ehrenamtlich im Sportverein und hilft jüngeren Schüler*innen bei den Hausaufgaben.",
     lowLabel:
       "Das ist Alex (17). Alex hatte kürzlich Ärger wegen eines Diebstahl-Verdachts und gilt bei einigen Lehrkräften als eher unzuverlässig.",
-    imageUrl: "/images/person.png",
+    imageUrl: "/images/person.jpg",
   },
   {
     id: "lebenslauf",
@@ -72,7 +72,7 @@ export const SCENARIOS: ScenarioConfig[] = [
       "Bewerbung von Mara K. – Abschluss an einem renommierten Elite-Gymnasium, mehrfach für besondere Leistungen ausgezeichnet.",
     lowLabel:
       "Bewerbung von Mara K. – Abschluss an einer beliebigen Gesamtschule, ohne besondere Auszeichnungen.",
-    imageUrl: "/images/lebenslauf.png",
+    imageUrl: "/images/lebenslauf.jpg",
   },
   {
     id: "produkt",
@@ -84,7 +84,7 @@ export const SCENARIOS: ScenarioConfig[] = [
       "Marke: AURORA Pro Audio. UVP: 199 €. Beliebt bei vielen Musiker*innen.",
     lowLabel:
       "Marke: SoundMax Basic. Preis: 24,99 € beim Discounter. Einfaches Einsteigermodell.",
-    imageUrl: "/images/produkt.png",
+    imageUrl: "/images/produkt.jpg",
   },
 ];
 

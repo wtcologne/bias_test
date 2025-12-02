@@ -156,7 +156,7 @@ export default function PlayAllScenarios() {
           </div>
 
           {/* Progress Bar */}
-          <div className="w-full h-1.5 bg-slate-200 rounded-full mb-8 overflow-hidden">
+          <div className="w-full h-1.5 bg-slate-200 rounded-full mb-6 overflow-hidden">
             <div
               className="h-full bg-blue-600 rounded-full transition-all duration-500 ease-out"
               style={{
@@ -164,11 +164,6 @@ export default function PlayAllScenarios() {
               }}
             />
           </div>
-
-          {/* Titel */}
-          <h1 className="text-2xl font-semibold text-slate-900 text-center mb-6 tracking-tight">
-            {scenario.title}
-          </h1>
 
           {/* Kontext-Box mit Erwartungsmanipulation */}
           <div className="bg-white rounded-2xl border border-slate-200 p-5 mb-6 shadow-sm">
@@ -202,12 +197,13 @@ export default function PlayAllScenarios() {
           {/* Bild (falls vorhanden) */}
           {scenario.imageUrl && (
             <div className="mb-6 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-[3/4]">
                 <Image
                   src={scenario.imageUrl}
-                  alt={scenario.title}
+                  alt=""
                   fill
                   className="object-contain"
+                  priority
                   onError={(e) => {
                     (e.target as HTMLElement).style.display = "none";
                   }}
