@@ -77,7 +77,7 @@ export const SCENARIOS: ScenarioConfig[] = [
   {
     id: "produkt",
     title: "Bewertung eines Produkts",
-    question: "Wie hochwertig schätzt du dieses Produkt ein?",
+    question: "Wie hochwertig sieht das Produkt aus?",
     minValue: 1,
     maxValue: 10,
     highLabel:
