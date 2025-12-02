@@ -41,7 +41,7 @@ export const SCENARIOS: ScenarioConfig[] = [
   {
     id: "aufsatz",
     title: "Bewertung eines Schüleraufsatzes",
-    question: "Wie literarisch wertvoll findest du diesen Text geben?",
+    question: "Wie gut findest du diesen Text geben?",
     minValue: 1,
     maxValue: 10,
     highLabel:

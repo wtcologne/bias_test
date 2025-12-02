@@ -19,6 +19,8 @@ export default function PlayAllScenarios() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [showWarning, setShowWarning] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+  // Neuer State: Zeige zuerst Info-Popup
+  const [showInfo, setShowInfo] = useState(true);
 
   // Beim Start: Für jedes Szenario zufällig high/low bestimmen
   useEffect(() => {
@@ -38,12 +40,13 @@ export default function PlayAllScenarios() {
   const scenario: ScenarioConfig | undefined = SCENARIOS[currentIndex];
   const condition: ConditionId | undefined = conditions[currentIndex];
 
-  // Rating zurücksetzen wenn Szenario wechselt
+  // Rating zurücksetzen und Info-Popup zeigen wenn Szenario wechselt
   useEffect(() => {
     if (scenario) {
       const midValue = Math.round((scenario.minValue + scenario.maxValue) / 2);
       setRating(midValue);
       setShowWarning(false);
+      setShowInfo(true); // Bei neuem Szenario wieder Info zeigen
     }
   }, [currentIndex, scenario]);
 
@@ -132,11 +135,80 @@ export default function PlayAllScenarios() {
   const expectationLabel =
     condition === "high" ? scenario.highLabel : scenario.lowLabel;
 
+  // SCHRITT 1: Info-Popup anzeigen
+  if (showInfo) {
+    return (
+      <>
+        <Head>
+          <title>
+            {currentIndex + 1}/{SCENARIOS.length} – Info | Bias-Experiment
+          </title>
+        </Head>
+
+        <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-6">
+          <div className="max-w-md w-full">
+            {/* Progress Counter */}
+            <div className="flex items-center justify-center mb-6">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
+                <span className="text-sm font-medium text-slate-600">
+                  Szenario
+                </span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-sm font-semibold">
+                  {currentIndex + 1}
+                </span>
+                <span className="text-sm text-slate-400">von {SCENARIOS.length}</span>
+              </div>
+            </div>
+
+            {/* Info Card */}
+            <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-blue-100 flex items-center justify-center">
+                <svg
+                  className="w-8 h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+
+              <h2 className="text-sm font-medium text-slate-500 text-center mb-3 uppercase tracking-wider">
+                Hintergrund
+              </h2>
+
+              <p className="text-xl text-slate-800 text-center leading-relaxed mb-8">
+                {expectationLabel}
+              </p>
+
+              <button
+                onClick={() => setShowInfo(false)}
+                className="w-full py-4 px-6 rounded-2xl font-medium text-white
+                           bg-blue-600 hover:bg-blue-700 
+                           active:scale-[0.98]
+                           transition-all duration-200
+                           shadow-lg shadow-blue-600/20"
+              >
+                Verstanden
+              </button>
+            </div>
+          </div>
+        </main>
+      </>
+    );
+  }
+
+  // SCHRITT 2: Bild + Bewertung
   return (
     <>
       <Head>
         <title>
-          {currentIndex + 1}/{SCENARIOS.length} – {scenario.title} | Bias-Experiment
+          {currentIndex + 1}/{SCENARIOS.length} – Bewertung | Bias-Experiment
         </title>
       </Head>
 
@@ -163,35 +235,6 @@ export default function PlayAllScenarios() {
                 width: `${((currentIndex + 1) / SCENARIOS.length) * 100}%`,
               }}
             />
-          </div>
-
-          {/* Kontext-Box mit Erwartungsmanipulation */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-5 mb-6 shadow-sm">
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg
-                  className="w-4 h-4 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-slate-500 mb-1">
-                  Hintergrund
-                </p>
-                <p className="text-slate-800 leading-relaxed">
-                  {expectationLabel}
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Bild (falls vorhanden) */}
@@ -327,4 +370,3 @@ export default function PlayAllScenarios() {
     </>
   );
 }
-
